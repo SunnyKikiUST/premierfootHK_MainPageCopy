@@ -1,0 +1,109 @@
+
+$default_color: #4f546c;
+$btn_primary_backgroundcolor: #0e48fe;
+$btn_primary_text_color: #eef1f6;
+$btn_primary_icon_color: #eef1f6;
+
+$btn_notification_backgroundcolor: #ffebeb;
+$btn_secondary_color: #0e48fe;
+$btn_secondary_background: transparent;
+$btn_secondary_icon_warning_color:#e00000;
+$btn_secondary_icon_close_backgroundcolor: #ffc2c2;;
+$btn_secondary_icon_close_color:#e00000;
+
+.btn_body{
+    position: relative;
+    font-family: Mukta, sans-serif;
+    height: 30vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: $default_color;
+    button {
+        font-family: inherit;
+        font-size: 12px;
+        white-space: nowrap;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.btn_primary{
+    background-color: $btn_primary_backgroundcolor;
+    border-radius: 5%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: $btn_primary_text_color;
+    padding: 0.5rem;
+}
+
+.btn_primary_icon{
+    width:1rem;
+    color: $btn_primary_icon_color;
+}
+
+.btn_secondary{
+    background-color: $btn_secondary_background;
+    font-weight: bold;
+    border: none;
+    color: $btn_secondary_color;
+}
+
+.notification{
+    position: absolute;
+    height: 40px;
+    left: 50%;
+    top: 0;
+    transform: translatex(-50%);
+    background-color: $btn_notification_backgroundcolor;
+    border-radius: 0.5rem;
+    border: none;
+    overflow: hidden;
+    display: flex;
+    max-height: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    transition: all 0.4s ease-in-out ;
+}
+
+.notification_show{
+    animation: warning 400ms ease-in-out both;
+    max-height: 40px;
+}
+
+@keyframes warning{
+    0%{
+        opacity: 0;
+        top: 0;
+    }
+    5%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        top: 2%;
+    }
+}
+
+.btn_secondary_icon_warning{
+    font-size: 1.5rem;
+    margin-left:1rem;
+    color: $btn_secondary_icon_warning_color;
+}
+
+.notification_close{
+    background-color: $btn_secondary_icon_close_backgroundcolor;
+    line-height: 40px;
+    width: 35px;
+    text-align: center;
+}
+
+.btn_secondary_icon_close{
+    font-size: 1rem;
+    color: $btn_secondary_icon_close_color;
+}
